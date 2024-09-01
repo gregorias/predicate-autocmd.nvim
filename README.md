@@ -1,9 +1,7 @@
 <!-- markdownlint-disable MD013 MD033 MD041 -->
 
 Predicate-autocmd is a Neovim plugin that provides a Lua library for creating predicate-based autocmds.
-
-> [!Caution]
-> This plugin is WIP.
+This is useful for lazy loading when we want to wait for specific events to occur.
 
 ## ⚡️ Requirements
 
@@ -16,11 +14,20 @@ Install the plugin with your preferred package manager, such as [Lazy]:
 ```lua
 {
   [1] = "gregorias/predicate-autocmd.nvim",
-  config = true,
+  version = "1.0"
 }
 ```
 
 ## 🚀 Usage
+
+In your Neovim configuration, to, for example, run lazily run a setup function only once we are in a Lua file, you can run:
+
+```lua
+require"predicate-autocmd".create_autocmd(
+  { "and", { "FileType", pattern="lua" }, { "User", pattern="VeryLazy" } },
+  setup
+)
+```
 
 ## 🔗 See also
 
