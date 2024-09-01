@@ -15,6 +15,18 @@ Install lefthook:
 lefthook install
 ```
 
+## Operations
+
+### Release a new version
+
+To release a new version:
+
+```shell
+NEW_VERSION=1.0
+git tag v$NEW_VERSION
+git push origin v$NEW_VERSION
+```
+
 ## ADRs
 
 ### 1. Why is it a plugin and not a module in `.config/nvim`?
