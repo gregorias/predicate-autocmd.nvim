@@ -36,7 +36,8 @@ local to_autocmd_args = function(input)
   end
 end
 
----@alias Predicate AutocmdEvent | AutocmdArgs | table<string | Predicate>
+---@alias PredicateOrOperator (Predicate | string)
+---@alias Predicate AutocmdEvent | AutocmdArgs | PredicateOrOperator[]
 
 ---@param predicate Predicate
 ---@return any, any
